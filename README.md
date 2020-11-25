@@ -1,2 +1,2 @@
-# Android-projects
-University Android labs
+# Игорь Чайкин
+853503
