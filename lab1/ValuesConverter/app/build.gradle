@@ -3,6 +3,28 @@ plugins {
     id 'kotlin-android'
 }
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.ajoberstar:grgit:1.5.0'
+    }
+}
+
+import org.ajoberstar.grgit.Grgit
+
+ext {
+    git = Grgit.open(currentDir: projectDir)
+    gitVersionName = git.describe()
+    gitVersionCode = git.tag.list().size()
+}
+
+task printVersion() {
+    println("Version Name: $gitVersionName")
+    println("Version Code: $gitVersionCode")
+}
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
@@ -11,8 +33,8 @@ android {
         applicationId "com.mishaismenska.valuesconverter"
         minSdkVersion 29
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode gitVersionCode
+        versionName gitVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
