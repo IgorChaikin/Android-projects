@@ -29,6 +29,15 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
 
+    signingConfigs {
+        release {
+            storeFile file('/Users/Digital/Documents/android-keystores/upload-keystore')
+            storePassword 'dTzZwnLQxKodhdAETHgk7AUtQKVnGuyZ'
+            keyAlias = 'upload'
+            keyPassword 'dTzZwnLQxKodhdAETHgk7AUtQKVnGuyZ'
+        }
+    }
+
     defaultConfig {
         applicationId "com.mishaismenska.valuesconverter"
         minSdkVersion 29
