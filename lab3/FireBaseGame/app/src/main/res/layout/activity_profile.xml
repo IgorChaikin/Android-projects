@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <ImageView
+        android:scaleType="matrix"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/avatar"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+    <Switch
+        android:id="@+id/gravatar_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/avatar"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@id/gravatar_switch"
+        android:text="Gravatar" />
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/submit"
+        android:id="@+id/nickname"
+        app:layout_constraintBottom_toBottomOf="@id/submit"
+        app:layout_constraintTop_toBottomOf="@id/gravatar_switch"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gravatar_switch"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
