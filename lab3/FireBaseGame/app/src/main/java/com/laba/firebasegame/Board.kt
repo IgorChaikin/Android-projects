@@ -4,7 +4,7 @@ import com.squareup.moshi.JsonClass
 import java.io.Serializable
 import kotlin.random.Random
 
-const val SHIPS_COUNT = 1
+const val SHIPS_COUNT = 10
 const val BOARD_SIZE = 10
 
 @JsonClass(generateAdapter = true)
