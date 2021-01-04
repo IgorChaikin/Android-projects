@@ -7,6 +7,5 @@ class NamedTimer(
     val name: String,
     val length: Duration,
     val repeatTimes: Int,
-    val isRelax: Boolean = false,
-    val onPause: Boolean = false
+    val isRelax: Boolean = false
 ) : Serializable
